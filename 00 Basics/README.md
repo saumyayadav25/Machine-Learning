@@ -110,10 +110,12 @@ In model-based learning, the training data is used to create a model that can be
 6. Overfitting
 
 Memorise data.
+
 7. Underfitting
 
 Opposite of overfitting
 ![image](https://github.com/user-attachments/assets/cd271d32-6c10-4b87-8c34-49f7d9880bdb)
+
 8. Software Integration
 9. Offline Learning/ Deployment
 10. Cost involved
