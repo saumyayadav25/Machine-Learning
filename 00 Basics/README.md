@@ -26,7 +26,7 @@ The primary goal of Unsupervised learning is often to discover hidden patterns, 
 1. Clustering - Clustering is the process of grouping data points into clusters based on their similarity.
 2. Dimensionality reduction - when you have a lot of input columns; remove extra columns, and merge related columns into single column using feature extraction techniques like PCA. Reduce the dimensionality of data while preserving its essential information.
 3. Anomaly detection - detect and remove outliers from systems
-4. Association rule learning - Association rule learning is a technique for discovering relationships between items in a dataset. It identifies rules that indicate the presence of one item implies the presence of another item with a specific probability.
+4. Association rule learning - Association rule learning is a technique for discovering relationships between items in a dataset. It identifies rules that indicate the presence of one item implies the presence of another item with a specific probability. For example, 93% of customers who purchased item A also bought item B. This rule helps identify frequent itemsets, showing which products are commonly bought together. Association rule learning can be used to understand customer purchasing behavior and optimize product recommendations or placements.
 
 ## Semi - supervised Machine Learning
 partially supervised and partially unsupervised.
@@ -107,15 +107,24 @@ In model-based learning, the training data is used to create a model that can be
 - Sampling bias: occurs when a dataset does not reflect the realities of the environment in which a model will run.
 4. Poor Quality Data
 5. Irrelevant Features
-6. Overfitting
+6. Overfitting: Memorise data.
 
-Memorise data.
-
-7. Underfitting
-
-Opposite of overfitting
+7. Underfitting: Opposite of overfitting
 ![image](https://github.com/user-attachments/assets/cd271d32-6c10-4b87-8c34-49f7d9880bdb)
 
 8. Software Integration
 9. Offline Learning/ Deployment
 10. Cost involved
+
+# Applications of Machine Learning
+1. Retail - Amazon/Big Bazaar
+- Retailers use ML algorithms to analyze customer preferences and shopping behavior to provide tailored product recommendations, enhancing customer experience and increasing sales.
+- Machine learning uses association rule learning to identify patterns in customer purchase behavior. This helps retailers understand which products are frequently bought together (e.g., bread and butter) and optimize store layouts, cross-selling strategies, and product placements accordingly.
+2. Banking and Finance
+3. Transportation
+- OLA: Machine learning dynamically adjusts fares based on real-time demand and supply. Prices are higher during peak demand periods (e.g., rush hours or bad weather) to incentivize more drivers to come online and meet the increased demand.
+- Swiggy : When a delivery executive has multiple orders from the same or nearby restaurants, ML algorithms group these orders and create the most efficient delivery route.
+4. Manufacturing - Tesla
+- Machine learning models predict equipment failures before they occur by analyzing historical data and real-time sensor readings
+5. Consumer Internet - Twitter
+- Machine learning is used to analyze public sentiment in tweets, helping brands and governments understand public opinion on various topics, products, or events. Positive or negative sentiment extracted from tweets can indicate potential movements in stock prices. 
