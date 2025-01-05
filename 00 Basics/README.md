@@ -128,3 +128,57 @@ In model-based learning, the training data is used to create a model that can be
 - Machine learning models predict equipment failures before they occur by analyzing historical data and real-time sensor readings
 5. Consumer Internet - Twitter
 - Machine learning is used to analyze public sentiment in tweets, helping brands and governments understand public opinion on various topics, products, or events. Positive or negative sentiment extracted from tweets can indicate potential movements in stock prices. 
+
+
+# Machine Learning Development Life Cycle
+![image](https://github.com/user-attachments/assets/6a6613ac-9cb3-47d5-a1c2-c2fc726ea956)
+
+1. **Frame the problem**
+- Understand what problem you need to solve.
+- Who are your target customers?
+- How much will it cost? 
+- How many team members are needed?
+- How will the final product look?
+- Is the model supervised or unsupervised? 
+- Will it run in online mode or batch mode?
+- Which algorithms will be most effective?
+- Where will you get your data from?
+2. **Gathering the Data**
+- CSV files
+- Fetch data using APIs.
+- web scraping
+- Build a data warehouse from a database using the ETL (Extract, Transform, Load) process, then fetch the data from the warehouse for analysis.
+- For large datasets, data is processed in clusters using tools like Apache Spark.
+3. **Data preprocessing**
+- Remove duplicates, missing values, outliers
+- Scale values: Apply standardization to scale features to a mean of 0 and a standard deviation of 1, ensuring uniformity across variables.
+4. **Exploratory Data Analysis(EDA)**
+- helps in Visualization: Draw graphs such as histograms, scatter plots, box plots, and heatmaps to identify patterns, trends, and relationships.
+- Univariate Analysis: Examine individual columns to understand their distribution (e.g., histograms for numerical data and count plots for categorical data).
+Bivariate Analysis: Analyze relationships between two variables using scatter plots, box plots, or correlation heatmaps.
+- outlier detection
+- convert imbalanced data into balanced
+5. **Feature Engineering and Selection**
+- Features: Input columns in the dataset used to predict the output.
+- Feature Engineering: Create new features by combining or transforming existing columns to improve model performance.
+- Feature Selection: Identify and remove columns that do not significantly impact the target variable.
+6. **Model Training, Evaluation and Selection**
+- Training: Train different algorithms by providing them the same dataset, allowing each to learn patterns and relationships.
+- Model Evaluation: Assess model performance using metrics such as accuracy, precision, recall, F1-score, and ROC-AUC.
+- Model Selection: Optimize performance by tuning hyperparameters using methods like grid search or random search.
+- Ensemble Learning: an ensemble model combines several individual models to produce more accurate predictions than a single model alone.
+7. **Model Deployment**
+- Save the model as a binary file (using pickle).
+- Convert the binary file into an API (using Flask or FastAPI) that takes input in JSON format and returns predictions.
+- The user inputs data through a form on your website.
+- The input is sent to the Python app, which communicates with the API for predictions.
+- The API sends the prediction back in JSON format, and the website displays the result.
+8. **Testing**
+- Beta Testing: Test the model with loyal users, gather their feedback, and identify any issues or improvements needed.
+- A/B Testing: Compare two versions (A and B) of the model or feature to determine which one performs better.
+9. **Optimise**
+- Backup of Model: Keep a backup of the trained model to prevent data loss.
+- Data Backup: Regularly back up the dataset to protect against accidental loss or corruption.
+- Load Balancing: Use load balancing to handle high website traffic, ensuring smooth performance even with increased user requests.
+- Re-training (Model Rotation): Decide the frequency for re-training the model to maintain its accuracy as new data comes in.
+- Other Optimizations: Continuously monitor and improve system performance, including scalability, efficiency, and security.
