@@ -182,3 +182,38 @@ Bivariate Analysis: Analyze relationships between two variables using scatter pl
 - Load Balancing: Use load balancing to handle high website traffic, ensuring smooth performance even with increased user requests.
 - Re-training (Model Rotation): Decide the frequency for re-training the model to maintain its accuracy as new data comes in.
 - Other Optimizations: Continuously monitor and improve system performance, including scalability, efficiency, and security.
+
+
+## How to frame a Machine Learning Problem
+
+**(Case Study: Netflix - Reducing Churn Rate)**
+
+1. Define the Problem  
+
+- **Goal:** Reduce churn rate (customers leaving the platform).  
+
+2. Type of Problem  
+
+- **Task:** Identify customers likely to leave the platform.  
+
+<img width="404" alt="img" src="https://github.com/user-attachments/assets/d3c50c63-99a8-4ce8-9b20-425f77e5d470" />
+
+3. Current Available Solutions  
+
+- Existing retention strategies, user engagement techniques, etc. 
+
+4. Getting Data *(Factors affecting churn)* 
+
+- Watch time
+- Search but did not find
+- Content left in the middle
+- Clicked on recommendations(order of recommendations)
+
+5. Metrics to Measure Success
+To let you know whether you are moving in right direction or not.
+
+6. Online or Batch Learning
+
+7. Check Assumptions  
+- Ensure all assumed factors affecting churn are available.  
+- Validate key assumptions before training the model.  
