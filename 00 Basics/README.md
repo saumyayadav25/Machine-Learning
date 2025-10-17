@@ -183,6 +183,7 @@ Bivariate Analysis: Analyze relationships between two variables using scatter pl
 - Re-training (Model Rotation): Decide the frequency for re-training the model to maintain its accuracy as new data comes in.
 - Other Optimizations: Continuously monitor and improve system performance, including scalability, efficiency, and security.
 
+<img width="1400" height="637" alt="image" src="https://github.com/user-attachments/assets/7b2d9b2d-fda6-4177-b1f6-15f8724eaa4b" />
 
 ## How to frame a Machine Learning Problem
 
