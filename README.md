@@ -50,7 +50,7 @@
 - [Numerical Data - Simple Imputer](https://github.com/saumyayadav25/Machine-Learning/tree/main/03%20Feature%20Engineering/01%20Feature%20Transformation/06%20Handling%20Missing%20Data/02%20Numerical%20Data%20-%20Simple%20Imputer)
 - [Missing Categorical Data](https://github.com/saumyayadav25/Machine-Learning/tree/main/03%20Feature%20Engineering/01%20Feature%20Transformation/06%20Handling%20Missing%20Data/03%20Handling%20missing%20Categorical%20Data)
 
-### 🔹 3.2 Pipelines
+## 🔹 Pipelines
 - [Pipelines](https://github.com/saumyayadav25/Machine-Learning/tree/main/03%20Feature%20Engineering/02%20Pipelines)
 
 ## 🚀 Projects
