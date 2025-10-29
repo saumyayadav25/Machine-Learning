@@ -65,7 +65,6 @@ Date and time columns contain **multiple pieces of information** that can be ext
 - **Minute**
 - **Second**
 
----
 
 ###  Why Do This?
 - Helps ML models **capture temporal patterns**  
