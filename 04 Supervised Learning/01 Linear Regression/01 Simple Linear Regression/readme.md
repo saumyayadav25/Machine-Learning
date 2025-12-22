@@ -56,6 +56,7 @@ Such that the error between actual and predicted values is minimum.
 - Uses a **direct mathematical formula**
 - Also called **Ordinary Least Squares (OLS)**
 - Used internally by **sklearn LinearRegression**
+- Requires **matrix inversion**
 - Best for **small number of features**
 
 This method directly computes optimal `m` and `b`.
@@ -64,6 +65,7 @@ This method directly computes optimal `m` and `b`.
 - Uses **iterative optimization**
 - Based on **differentiation**
 - Uses **Gradient Descent**
+- Preferred when **matrix algebra becomes computationally expensive**
 - Best for **large / high-dimensional data**
 
 In sklearn:
