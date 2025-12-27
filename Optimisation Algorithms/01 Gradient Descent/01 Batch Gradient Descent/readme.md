@@ -103,7 +103,7 @@ Start with random / default values:
 2. **Step 2 — Define Loss Function**
 Using Mean Squared Error (without 1/n for simplicity):
 ```
-L = Σ (yᵢ − ŷᵢ)²
+L = (1/n) * Σ (yᵢ − ŷᵢ)²
 ```
 
 Where:
@@ -111,10 +111,14 @@ Where:
 ŷᵢ = β₀ + β₁x₁ᵢ + β₂x₂ᵢ
 ```
 
+<img width="478" height="273" alt="Screenshot 2025-12-27 at 1 43 09 PM" src="https://github.com/user-attachments/assets/5bc98917-cff5-4800-a2b3-ea866245f04f" />
+
 So:
 ```
 L = L(β₀, β₁, β₂)
 ```
+
+<img width="513" height="326" alt="Screenshot 2025-12-27 at 1 18 15 PM" src="https://github.com/user-attachments/assets/7bbdce6a-aee4-4cd3-80e7-5beaeac5fc70" />
 
 This loss depends on **three parameters**.
 
@@ -124,7 +128,7 @@ This loss depends on **three parameters**.
 
 This forms a **4D surface** (3 parameters + loss).
 
-<img width="528" height="345" src="https://github.com/user-attachments/assets/78f21a03-fecf-434e-81b9-f2b639e0f819" />
+<img width="512" height="351" alt="Screenshot 2025-12-27 at 1 15 29 PM" src="https://github.com/user-attachments/assets/c0c66c30-0467-44ca-a081-82e7d432eeb0" />
 
 3. Step 3 — Compute Gradients
 We compute **partial derivatives** (gradients):
@@ -133,6 +137,30 @@ We compute **partial derivatives** (gradients):
 ∂L/∂β₁
 ∂L/∂β₂
 ```
+
+<img width="526" height="327" alt="Screenshot 2025-12-27 at 1 22 53 PM" src="https://github.com/user-attachments/assets/b99fac9f-22b0-4d79-b4ae-bb4e08e0ae7f" />
+
+<img width="502" height="310" alt="Screenshot 2025-12-27 at 1 29 43 PM" src="https://github.com/user-attachments/assets/8737bcfd-b4bb-4335-8cc9-fab6f7fbea3e" />
+
+<img width="504" height="339" alt="Screenshot 2025-12-27 at 1 32 13 PM" src="https://github.com/user-attachments/assets/3940565e-23c6-4b7e-b3df-7f0c8bed5b97" />
+
+```
+∂L / ∂βₘ = −(2/n) Σ (yᵢ − ŷᵢ) xᵢₘ
+```
+
+- `βₘ` → coefficient of the m-th feature
+
+- `xᵢₘ` → value of the m-th feature for the i-th data point
+
+- `(yᵢ − ŷᵢ)` → residual (error)
+
+- Sum is taken over all data points
+
+<img width="503" height="241" alt="Screenshot 2025-12-27 at 1 35 10 PM" src="https://github.com/user-attachments/assets/c673e6b9-aba9-4a6c-99ef-36b47e804c14" />
+
+<img width="508" height="314" alt="Screenshot 2025-12-27 at 1 47 35 PM" src="https://github.com/user-attachments/assets/faeeb48c-6541-496b-8f90-bcd95ffa1a1b" />
+
+<img width="494" height="368" alt="Screenshot 2025-12-27 at 1 59 43 PM" src="https://github.com/user-attachments/assets/d4f3c183-aec6-487f-8c94-a2643c033599" />
 
 Each gradient tells:
 > How much the loss changes if that parameter changes.
