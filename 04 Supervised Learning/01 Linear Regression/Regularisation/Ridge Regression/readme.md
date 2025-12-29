@@ -223,3 +223,180 @@ w = (XᵀX + λI)⁻¹ Xᵀy
 
 👉 Ridge adds **λI** to avoid large coefficients and matrix singularity.
 
+---
+
+# Ridge Regression using Gradient Descent
+
+Ridge Regression can also be optimized using **Gradient Descent**, instead of the closed-form normal equation.
+
+This is useful when:
+- Data is very large
+- Matrix inversion is expensive
+- We want an iterative solution
+
+### 🔹 Loss Function (Vector Form)
+
+For Ridge Regression:
+```
+L = Σ (yᵢ − ŷᵢ)² + λ ||w||²
+```
+
+Where:
+- ŷ = Xw
+- w → weight vector (w₀, w₁, …, wₙ)
+- λ → regularization strength
+
+Vector form:
+```
+L = (Xw − y)ᵀ (Xw − y) + λ wᵀw
+```
+
+<img width="482" height="323" alt="Screenshot 2025-12-29 at 1 14 59 PM" src="https://github.com/user-attachments/assets/c09f6f22-3648-459d-a8e0-7c504fd7e48d" />
+
+#### 🔹 Expand the Loss
+
+```
+L = wᵀXᵀXw − 2wᵀXᵀy + yᵀy + λ wᵀw
+```
+
+Only the terms containing `w` matter for differentiation.
+
+### 🔹 Gradient of the Loss
+
+We compute the gradient w.r.t `w`:
+```
+∂L / ∂w = 2XᵀXw − 2Xᵀy + 2λw
+```
+
+<img width="470" height="226" alt="Screenshot 2025-12-29 at 1 16 54 PM" src="https://github.com/user-attachments/assets/13a20caa-22a3-494f-a549-53e50b65d1c1" />
+
+Dividing by 2 (optional, absorbed into learning rate):
+```
+∂L / ∂w = XᵀXw − Xᵀy + λw
+```
+
+This is the **gradient**.
+
+<img width="517" height="304" alt="Screenshot 2025-12-29 at 1 23 19 PM" src="https://github.com/user-attachments/assets/e43336d8-07d8-403b-bbbc-97daeb2b1acd" />
+
+<img width="478" height="276" alt="Screenshot 2025-12-29 at 1 23 45 PM" src="https://github.com/user-attachments/assets/7e3eda88-a933-4f47-a8c3-1b6e78b76c1f" />
+
+### 🔹 Gradient Descent Update Rule
+
+For all parameters simultaneously:
+```
+w_new = w_old − η × (∂L / ∂w)
+```
+
+Substitute gradient:
+```
+w_new = w_old − η (XᵀXw − Xᵀy + λw)
+```
+
+- Update happens for **all coefficients**: w₀, w₁, …, wₙ
+- Repeat for fixed number of epochs or until convergence
+
+---
+
+# Ridge Regression - 5 Key (Interview) Points
+
+Loss Function:
+```
+L = Σ (yᵢ − ŷᵢ)² + λ ||w||²
+```
+
+Where:
+- First term → data fit (MSE)
+- Second term → **shrinkage term** (L2 penalty)
+
+1. How Do Coefficients Get Affected?
+
+- λ ∈ [0, ∞)
+
+Cases:
+- **λ = 0** → Simple Linear Regression  
+- **λ increases** → coefficients shrink toward 0  
+- **λ → ∞** → coefficients → very close to 0  
+
+⚠️ Important:
+- In Ridge, coefficients **never become exactly 0**
+
+2. Higher Coefficients Are Penalized More
+
+Suppose after Linear Regression:
+```
+w₁ = 1000
+w₂ = 10
+w₃ = 1
+```
+
+Interpretation:
+- x₁ is most important
+- x₂ moderately important
+- x₃ least important
+
+When λ increases:
+- w₁ shrinks **fastest**
+- w₂ shrinks slower
+- w₃ shrinks slowest
+
+👉 Larger coefficients get **penalized more aggressively**.
+
+3. Bias–Variance Tradeoff
+
+λ directly controls bias and variance:
+
+- **Small λ**
+  - Low bias
+  - High variance
+  - Risk of overfitting
+
+- **Large λ**
+  - High bias
+  - Low variance
+  - Risk of underfitting
+
+👉 Ridge helps find a **balance** between bias and variance.
+
+<img width="958" height="702" alt="image" src="https://github.com/user-attachments/assets/f92efa84-fd37-4085-ae9b-a89ee61a52b8" />
+
+4. Impact on Loss Function
+
+With b = 0 (for simplicity):
+```
+L = Σ (yᵢ − m xᵢ)² + λ m²
+```
+
+As λ increases:
+- Data-fit term tries to minimize error
+- Regularization term pushes `m` toward 0
+- Final solution is a **compromise**
+
+👉 Ridge does not minimize MSE alone — it minimizes **MSE + complexity**.
+
+5. Why Is It Called “Ridge”?
+
+Soft Constraint Form (what we usually use):
+```
+L = MSE + λ ||w||²
+```
+
+Equivalent Hard Constraint Form:
+```
+minimize MSE
+subject to ||w||² ≤ c
+```
+
+Geometric intuition:
+- MSE → contour ellipses
+- Constraint → circle (L2 norm)
+- Optimal solution lies where:
+  - **ellipse touches the circle**
+
+👉 The solution lies on the **boundary (ridge)** of the constraint region.
+
+That’s why it’s called **Ridge Regression**.
+
+<img width="498" height="347" alt="Screenshot 2025-12-29 at 2 06 21 PM" src="https://github.com/user-attachments/assets/2955a41c-ba08-4695-a361-b9bee620f2e7" />
+
+> apply ridge regression when no. of input cols >= 2
